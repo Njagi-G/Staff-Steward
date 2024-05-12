@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function Department() {
     const [department, setDepartment] = useState([])
+    
     useEffect(() => {
         axios.get('http://localhost:3000/auth/department')
         .then(result => {
