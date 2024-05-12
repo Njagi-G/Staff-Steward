@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
 function Employee() {
+  useEffect(() => {
+
+  }, [])
   return (
     <div className="px-5 mt-3">
       <div className="d-flex justify-content-center">
@@ -10,7 +13,9 @@ function Employee() {
       <Link to="/dashboard/add-employee" className="btn btn-success">
         Add Employee
       </Link>
-      <div className="mt-3"></div>
+      <div className="mt-3">
+
+      </div>
     </div>
   );
 }
