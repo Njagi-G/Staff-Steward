@@ -35,9 +35,7 @@ function Department() {
                     {
                         department.map(d => (
                             <tr>
-                                <td>
-                                    {d.name}
-                                </td>
+                                <td>{d.name}</td>
                             </tr>
                         ))
                     }
