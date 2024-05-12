@@ -1,8 +1,20 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Employee() {
+  const [employee, setEmployee] = useState([])
   useEffect(() => {
+    axios.get('http://localhost:3000/auth/employee')
+      .then(result => {
+        if (result.data.Status) {
+          setEmployee(result.data.Result)
+        } else {
+          alert(result.data.Error)
+        }
+
+      })
+      .catch(err => console.log(err))
 
   }, [])
   return (
@@ -13,8 +25,39 @@ function Employee() {
       <Link to="/dashboard/add-employee" className="btn btn-success">
         Add Employee
       </Link>
-      <div className="mt-3">
+      <div className='mt-3'>
+        <table className='table'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Image</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Salary</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              employee.map(e => (
+                <tr>
+                  <td>{e.name}</td>
+                  <td><img src={`http://localhost:3000/Images/`+ e.image} className="employee-profile-photo" /></td>
+                  <td>{e.email}</td>
+                  <td>{e.address}</td>
+                  <td>{e.salary}</td>
+                  <td>
+                    <button className="btn btn-info btn-sm me-2">Edit</button>
+                    <button className="btn btn-warning btn-sm">Delete</button>
 
+
+                  </td>
+                </tr>
+              ))
+            }
+
+          </tbody>
+        </table>
       </div>
     </div>
   );
