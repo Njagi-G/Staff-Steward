@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function Dashboard() {
@@ -64,6 +64,12 @@ function Dashboard() {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="col p-0 m-0">
+            <div className="p-2 d-flex justify-content-center shadow">
+                <h4>Staff Steward, Your Online Staff Management Companion</h4>
+            </div>
+            <Outlet />
         </div>
       </div>
     </div>
