@@ -8,6 +8,8 @@ import Employee from './components/Employee';
 import Department from './components/Department';
 import Profile from './components/Profile';
 import AddDepartment from './components/AddDepartment';
+import AddEmployee from './components/AddEmployee';
+
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
         <Route path='/dashboard/department' element={<Department/>} ></Route>
         <Route path='/dashboard/profile' element={<Profile />} ></Route>
         <Route path='/dashboard/add-department' element={<AddDepartment />} ></Route>
-        
+        <Route path='/dashboard/add-employee' element={<AddEmployee />} ></Route>
       </Route>
     </Routes>
     
