@@ -5,4 +5,21 @@ Staff Steward is a staff management software that enables micro and small busine
 ## Features
 * *User-Friendly*
    => Using Staff Steward is as easy as 1, 2, 3. Simply login and start adding your employees. No manuals required.
+  
+* *Interactive Dashboard*
+  => Click, Click, Click! => Our dashboard is designed for ease of service. Click on the side-bar to acces the menu items. No  window reloads.
+
+* *Add Employees through controlled forms*
+  => Our forms are designed for micro and small businesses. They help managers focus on only colleting data they need to have a credible database of employee         information
+
+* *Be your Staff's remote Steward*
+  => Add Employees, Edit their Details, Assign Salaries, Upload their Photos from anywhere around the world. All you need is access to a mobile phone or computer. Work from the cloud.
+
+  
+
+   
+
+  
+
+
 
