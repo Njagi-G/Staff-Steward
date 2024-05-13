@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Employee() {
   const [employee, setEmployee] = useState([])
+  const navigate = useNavigate()
+
   useEffect(() => {
     axios.get('http://localhost:3000/auth/employee')
       .then(result => {
@@ -15,8 +17,19 @@ function Employee() {
 
       })
       .catch(err => console.log(err))
-
   }, [])
+
+  function handleDelete(id) {
+    axios.delete('http://localhost:3000/auth/delete-employee/' + id)
+    .then(result => {
+      if(result.data.Status) {
+        window.location.reload()
+      } else {
+        alert(result.data.Error)
+      }
+    })
+
+  }
   return (
     <div className="px-5 mt-3">
       <div className="d-flex justify-content-center">
@@ -48,12 +61,13 @@ function Employee() {
                   <td>{e.salary}</td>
                   <td>
                     <Link to={`/dashboard/edit-employee/`+e.id}className="btn btn-info btn-sm me-2">Edit</Link>
-                    <button className="btn btn-warning btn-sm">Delete</button>
+                    <button 
+                    className="btn btn-warning btn-sm " 
+                    onClick={() => handleDelete(e.id)}>Delete</button>
                   </td>
                 </tr>
               ))
             }
-
           </tbody>
         </table>
       </div>
